@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9475cdb1-de87-4d2f-8137-e1f3d44f06a1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../aep_replace/sync.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../aep_upgrade/init.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../aep_upgrade/test_send_mail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/analyseLog.pl" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/analyseLog.pl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/AUTHORS" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/AUTHORS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/CHANGES.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/CHANGES.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/Jinja2.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/Jinja2.egg-info/PKG-INFO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/Jinja2.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/Jinja2.egg-info/SOURCES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/Jinja2.egg-info/dependency_links.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/Jinja2.egg-info/dependency_links.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/Jinja2.egg-info/entry_points.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/Jinja2.egg-info/entry_points.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/Jinja2.egg-info/not-zip-safe" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/Jinja2.egg-info/not-zip-safe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/Jinja2.egg-info/requires.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/Jinja2.egg-info/requires.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/Jinja2.egg-info/top_level.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/Jinja2.egg-info/top_level.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/MANIFEST.in" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/MANIFEST.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/PKG-INFO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/README.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/artwork/jinjalogo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/artwork/jinjalogo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_static/.ignore" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_static/.ignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_static/jinja-small.png" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_static/jinja-small.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_templates/sidebarintro.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_templates/sidebarintro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_templates/sidebarlogo.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_templates/sidebarlogo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_themes/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_themes/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_themes/README" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_themes/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_themes/jinja/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_themes/jinja/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_themes/jinja/relations.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_themes/jinja/relations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_themes/jinja/static/jinja.css_t" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_themes/jinja/static/jinja.css_t" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_themes/jinja/theme.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/_themes/jinja/theme.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/api.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/api.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/cache_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/cache_extension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/changelog.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/changelog.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/contents.rst.inc" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/contents.rst.inc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/extensions.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/extensions.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/faq.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/faq.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/integration.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/integration.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/intro.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/intro.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/jinjaext.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/jinjaext.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/jinjastyle.sty" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/jinjastyle.sty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/latexindex.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/latexindex.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/logo.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/logo.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/nativetypes.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/nativetypes.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/sandbox.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/sandbox.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/switching.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/switching.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/templates.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/templates.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/tricks.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/docs/tricks.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/cycle.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/cycle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/debugger.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/debugger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/inheritance.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/inheritance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/templates/broken.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/templates/broken.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/templates/subbroken.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/templates/subbroken.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/test_filter_and_linestatements.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/test_filter_and_linestatements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/test_loop_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/test_loop_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/translate.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/basic/translate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/bench.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/bench.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/profile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/django/_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/django/_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/django/_input_field.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/django/_input_field.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/django/_textarea.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/django/_textarea.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/django/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/django/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/django/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/django/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/djangoext.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/djangoext.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/genshi/helpers.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/genshi/helpers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/genshi/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/genshi/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/genshi/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/genshi/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/jinja/helpers.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/jinja/helpers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/jinja/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/jinja/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/jinja/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/jinja/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/mako/helpers.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/mako/helpers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/mako/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/mako/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/mako/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/mako/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/rwbench.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/examples/rwbench/rwbench.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/Vim/jinja.vim" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/Vim/jinja.vim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/django2jinja/django2jinja.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/django2jinja/django2jinja.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/django2jinja/example.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/django2jinja/example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/django2jinja/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/django2jinja/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/django2jinja/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/django2jinja/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/django2jinja/templates/subtemplate.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/django2jinja/templates/subtemplate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/djangojinja2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/djangojinja2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/inlinegettext.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/inlinegettext.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/jinja.el" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/ext/jinja.el" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/_compat.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/_compat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/_identifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/_identifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/asyncfilters.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/asyncfilters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/asyncsupport.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/asyncsupport.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/bccache.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/bccache.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/compiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/compiler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/debug.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/debug.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/defaults.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/defaults.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/environment.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/environment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/ext.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/ext.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/idtracking.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/idtracking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/lexer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/loaders.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/loaders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/meta.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/meta.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/nativetypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/nativetypes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/nodes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/nodes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/optimizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/optimizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/runtime.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/runtime.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/sandbox.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/sandbox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/visitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/jinja2/visitor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/setup.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/res/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/res/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/res/templates/broken.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/res/templates/broken.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/res/templates/foo/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/res/templates/foo/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/res/templates/syntaxerror.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/res/templates/syntaxerror.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/res/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/res/templates/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_async.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_async.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_asyncfilters.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_asyncfilters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_bytecode_cache.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_bytecode_cache.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_core_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_core_tags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_debug.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_debug.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_ext.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_ext.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_features.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_features.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_idtracking.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_idtracking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_imports.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_imports.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_inheritance.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_inheritance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_lexnparse.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_lexnparse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_nativetypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_nativetypes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_regression.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_security.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_security.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/Jinja2-2.10/tests/test_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/AUTHORS" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/AUTHORS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/CHANGES" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/CHANGES" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/MANIFEST.in" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/MANIFEST.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/MarkupSafe.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/MarkupSafe.egg-info/PKG-INFO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/MarkupSafe.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/MarkupSafe.egg-info/SOURCES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/MarkupSafe.egg-info/dependency_links.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/MarkupSafe.egg-info/dependency_links.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/MarkupSafe.egg-info/not-zip-safe" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/MarkupSafe.egg-info/not-zip-safe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/MarkupSafe.egg-info/top_level.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/MarkupSafe.egg-info/top_level.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/PKG-INFO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/README.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib.linux-x86_64-2.7/markupsafe/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib.linux-x86_64-2.7/markupsafe/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib.linux-x86_64-2.7/markupsafe/_compat.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib.linux-x86_64-2.7/markupsafe/_compat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib.linux-x86_64-2.7/markupsafe/_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib.linux-x86_64-2.7/markupsafe/_constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib.linux-x86_64-2.7/markupsafe/_native.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib.linux-x86_64-2.7/markupsafe/_native.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib.linux-x86_64-2.7/markupsafe/_speedups.c" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib.linux-x86_64-2.7/markupsafe/_speedups.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib/markupsafe/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib/markupsafe/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib/markupsafe/_compat.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib/markupsafe/_compat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib/markupsafe/_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib/markupsafe/_constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib/markupsafe/_native.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib/markupsafe/_native.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib/markupsafe/_speedups.c" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/build/lib/markupsafe/_speedups.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/dist/MarkupSafe-1.0-py2.7.egg" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/dist/MarkupSafe-1.0-py2.7.egg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/markupsafe/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/markupsafe/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/markupsafe/_compat.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/markupsafe/_compat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/markupsafe/_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/markupsafe/_constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/markupsafe/_native.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/markupsafe/_native.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/markupsafe/_speedups.c" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/markupsafe/_speedups.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/setup.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/MarkupSafe-1.0/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/sshpass-1.06-2.el7.x86_64.rpm" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/dist/sshpass-1.06-2.el7.x86_64.rpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/inventory" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/inventory" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/playbook.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/playbook.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/ansible_script/setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/ansible_script/setup.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/cptgetLog.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/cptgetLog.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/formatJson.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/formatJson.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/getAnsible.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/getAnsible.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/getLog.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/getLog.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/tasks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/tasks.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/var/cbam.pem" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/var/cbam.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cbam-tools/zipHss.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../cbam-tools/zipHss.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myscp.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myssh.sh" beforeDir="false" afterPath="$PROJECT_DIR$/myssh.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vim/vim_readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../vim/vim_readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vim/vimrc" beforeDir="false" afterPath="$PROJECT_DIR$/../vim/vimrc" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1728766940">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="y" value="3" />
+    <option name="width" value="1932" />
+    <option name="height" value="1085" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9475cdb1-de87-4d2f-8137-e1f3d44f06a1" name="Default Changelist" comment="" />
+      <created>1550544712806</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1550544712806</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980299" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+</project>

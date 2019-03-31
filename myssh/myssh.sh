@@ -1,15 +1,20 @@
 #########################################################################
 # File Name: myssh.sh
-# Author: root
+# Author: luis.liu
 # mail: lx_figo@qq.com
 # Created Time: 2018-12-15 09:57
 #########################################################################
 #!/bin/bash
 #args: pgw1
-CONFIG=/etc/ansible/hosts
+if [ -f ~/ansible.host ];then
+	CONFIG=~/ansible.host
+else 
+	CONFIG=/etc/ansible/hosts
+fi
+echo $CONFIG
 if [ ! "$1" ];then
 	echo "no hosts!"
-	awk '{printf "%-10s  %s\n",$1,$2}' $CONFIG | sed 's/ansible_ssh_host=//'
+	awk '{printf "%-10s  %s\n",$1,$2}' $CONFIG | sed 's/ansible_ssh_host=//' | sort
 	exit 1
 fi
 myhost=$1
