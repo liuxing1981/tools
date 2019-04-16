@@ -1,0 +1,105 @@
+#!/bin/bash
+#usage:delete file for safe mode
+#author:figo
+#desc:mv the file to the ~/.Trash folder
+#use "empty" arg for clear the /.Trash folder
+
+RC=$HOME/.bashrc
+TRASH=~/.Trash
+RM=`which rm`
+
+help(){
+    echo "srm is a software to instead of system command rm."
+    echo "srm does not delete files from filesystem,just move them to a folder called Trash."
+    echo "So user can move them back or delete them from Trash."
+    echo "--install:To install srm to replace rm.Use srm to delete files"
+    echo "--uninstall:To uninstall srm.Use default rm"
+    echo "--list:To list all files in the Trash"
+    echo "--empty:To clear all files in the Trash"
+    echo "--rm:To delete the files directly just like the rm.Not to move the Trash"
+    echo "--help:show help"
+}
+
+#copy srm file to bin
+foo(){
+   echo 'cp srm ~/bin/srm'
+   cp srm $HOME/bin/
+   if [[ ! "$PATH" =~ "$HOME/bin" ]];then
+       grep "$HOME/bin" $RC
+       if [ "$?" != "0" ];then
+           echo "add path $HOME/bin"
+           sed -i '/export PATH=/d' $RC
+           echo "export PATH=$PATH:$HOME/bin" >> $RC
+       fi
+   fi
+#   source $RC
+}
+
+[ ! "$1" ] && help
+
+[ -d $TRASH ] || mkdir $TRASH
+case $1 in
+"--install")
+    cat $RC | grep srm 2>&1>/dev/null
+    if [ "$?" != 0 ];then
+        echo 'alias rm=srm' | tee -a $RC
+    fi
+    [ -e $HOME/bin ] || mkdir -p $HOME/bin
+    if [ -e $HOME/bin/srm ];then
+        old=`md5sum ./srm | awk '{print $1}'`
+        new=`md5sum $HOME/bin/srm | awk '{print $1}'`
+        if [ "$old" != "$new" ];then
+            echo "srm file changed"
+            foo
+        fi
+    else
+        echo "srm file is not exist"
+        foo
+    fi
+    echo "srm has been installed."
+    echo "run command: source $RC to enable srm"
+    exit 0
+    ;;
+"--uninstall")
+    $RM -f $HOME/bin/srm
+    #sed -i 's/alias rm=srm/unalias rm 2>\/dev\/null/' $RC 
+    sed -i 's/alias rm=srm//' $RC 
+    echo "srm is uninstalled successed."
+    echo "run command: source $RC to disable srm"
+    exit 0
+    ;;
+"--empty")
+    read -p "Are you sure to clean all the files in $TRASH folder[Y/N]" is_delete
+    if [[ "$is_delete" == "y" || "$is_delete" == "Y" ]];then
+	$RM -rf $TRASH/*
+    fi		
+    exit 0
+    ;;
+"--list")
+    ls $TRASH
+    exit 0
+    ;;
+"--rm")
+    $RM -rf $2
+    exit 0
+    ;;
+"--help")
+    help
+    exit 0
+    ;;
+esac
+
+if [[ $1 =~ "-" ]];then
+   shift
+fi
+job() {
+    if [ -e "$TRASH/$1" ];then
+       date=`date "+%F%T" |  sed -e 's/[-:]//g'`
+       TRASH=$TRASH/$1-$date
+    fi
+    mv $1 $TRASH
+}
+#for many files
+for f in $@;do
+    job $f
+done
