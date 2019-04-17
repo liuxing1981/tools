@@ -1,6 +1,6 @@
 import os
-from stat import *
-
+from stat import S_ISDIR
+from collections import ChainMap
 import paramiko
 
 
@@ -50,12 +50,7 @@ class Server(object):
     # ------获取远端linux主机上指定目录及其子目录下的所有文件------
     def __get_all_files_in_remote_dir(self, sftp, remote_dir):
         # 保存所有文件的列表
-        all_files = list()
-
-        # 去掉路径字符串最后的字符'/'，如果有的话
-        if remote_dir[-1] == '/':
-            remote_dir = remote_dir[0:-1]
-
+        all_files = {}
         # 获取当前指定目录下的所有目录及文件，包含属性值
         files = sftp.listdir_attr(remote_dir)
         for x in files:
@@ -63,64 +58,74 @@ class Server(object):
             filename = remote_dir + '/' + x.filename
             # 如果是目录，则递归处理该目录，这里用到了stat库中的S_ISDIR方法，与linux中的宏的名字完全一致
             if S_ISDIR(x.st_mode):
-                all_files.extend(self.__get_all_files_in_remote_dir(sftp, filename))
+                all_files[filename] = 'd'
+                all_files = ChainMap(all_files, self.__get_all_files_in_remote_dir(sftp, filename))
             else:
-                all_files.append(filename)
+                all_files[filename] = 'f'
         return all_files
 
     def sftp_get_dir(self, remote_dir, local_dir):
         t = paramiko.Transport(sock=(self.ip, self.port))
         t.connect(username=self.username, password=self.password)
         sftp = paramiko.SFTPClient.from_transport(t)
-        relative_path = remote_dir.split('/')[-1]
-        if relative_path == '':
-            relative_path = remote_dir.split('/')[-2]
-        # 获取远端linux主机上指定目录及其子目录下的所有文件
         all_files = self.__get_all_files_in_remote_dir(sftp, remote_dir)
-        # 依次get每一个文件
-        for x in all_files:
-            dirname = x.split('/')[-1]
-            # dirname = os.path.join(local_dir, os.path.dirname(x))
-            filename = os.path.join(dirname, os.path.basename(x))
-            if not os.path.exists(dirname):
-                os.makedirs(dirname)
-            print('Download file %s ...' % filename)
-            sftp.get(x, filename)
+        dirs = [ str(k) for k, v in all_files.items() if v == 'd']
+        files = [ k for k, v in all_files.items() if v == 'f']
+        remote_dir = remote_dir if remote_dir.endswith(os.sep) else remote_dir + os.sep
+        local_dir = local_dir if local_dir.endswith(os.sep) else local_dir + os.sep
+        for dir in dirs:
+            dir = dir[len(remote_dir):]
+            dir = os.path.normcase(local_dir + dir)
+            if not os.path.isdir(dir):
+                os.makedirs(dir)
+        for filename in files:
+            local_filename = filename[len(remote_dir):]
+            local_filename = os.path.normcase(local_dir + local_filename)
+            print('Download file %s to %s' %(filename,local_filename))
+            sftp.get(filename, local_filename)
     
     # ------获取本地指定目录及其子目录下的所有文件------
     def __get_all_files_in_local_dir(self, local_dir):
-        # 保存所有文件的列表
-        all_files = list()
-
+        all_files = {}
         # 获取当前指定目录下的所有目录及文件，包含属性值
         files = os.listdir(local_dir)
         for x in files:
             # local_dir目录中每一个文件或目录的完整路径
             filename = os.path.join(local_dir, x)
             # 如果是目录，则递归处理该目录
-            if os.path.isdir(x):
-                all_files.extend(self.__get_all_files_in_local_dir(filename))
+            if os.path.isdir(filename):
+                all_files[filename] = 'd'
+                all_files = ChainMap(all_files, self.__get_all_files_in_local_dir(filename))
             else:
-                all_files.append(filename)
+                all_files[filename] = 'f'
         return all_files
 
     def sftp_put_dir(self, local_dir, remote_dir):
         t = paramiko.Transport(sock=(self.ip, self.port))
         t.connect(username=self.username, password=self.password)
         sftp = paramiko.SFTPClient.from_transport(t)
-
-        # 去掉路径字符穿最后的字符'/'，如果有的话
+        # 去掉路径字符最后的字符'/'，如果有的话
         if remote_dir[-1] == '/':
             remote_dir = remote_dir[0:-1]
 
         # 获取本地指定目录及其子目录下的所有文件
         all_files = self.__get_all_files_in_local_dir(local_dir)
-        # 依次put每一个文件
-        for x in all_files:
-            filename = os.path.split(x)[-1]
-            remote_filename = remote_dir + '/' + filename
-            print('Upload file %s ...' % filename)
-            sftp.put(x, remote_filename)
+        dirs = [ str(k) for k, v in all_files.items() if v == 'd']
+        files = [ k for k, v in all_files.items() if v == 'f']
+        remote_dir = remote_dir if remote_dir.endswith(os.sep) else remote_dir + '/'
+        local_dir = local_dir if local_dir.endswith(os.sep) else local_dir + os.sep
+        for dir in dirs:
+            dir = dir[len(local_dir):]
+            dir = dir.replace('\\', '/')
+            dir = remote_dir + dir
+            self.run_command('mkdir -p ' + dir)
+        for filename in files:
+            remote_filename = filename[len(local_dir):]
+            remote_filename = remote_filename.replace('\\', '/')
+            remote_filename = remote_dir + remote_filename
+            print('Upload file from %s to %s' %(filename,remote_filename))
+            sftp.put(filename, remote_filename)
+     
 
     def run_command(self, command, chdir='/tmp'):
         ssh = paramiko.SSHClient()
@@ -138,6 +143,9 @@ if __name__ == '__main__':
     host = Server('114.215.64.121', 'root', 'SvL9n9123!')
     # print(host.run_command('ls -l', '/root/test'))
     # 将远端remote_path目录中的所有文件get到本地local_path目录
-    host.sftp_get_dir(r'/root/test', r'e:\tmp')
+    # host.sftp_get_dir(r'/root/test', r'e:\tmp')
     # # 将本地local_path目录中的所有文件put到远端remote_path目录
     # host.sftp_put_dir(remote_path, local_path)
+    host.sftp_get_dir(r'/tmp/Test', r'e:\tmp')
+    # # 将本地local_path目录中的所有文件put到远端remote_path目录
+    # host.sftp_put_dir(r'e:\tmp', '/tmp')
