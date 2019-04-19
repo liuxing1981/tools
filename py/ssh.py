@@ -1,6 +1,9 @@
+#!/usr/bin/python2
+# -*- coding: UTF-8 -*-
 import os
 from stat import S_ISDIR
-from collections import ChainMap
+#from collections import ChainMap
+import chainmap
 import paramiko
 
 
@@ -47,7 +50,7 @@ class Server(object):
             # 如果是目录，则递归处理该目录，这里用到了stat库中的S_ISDIR方法，与linux中的宏的名字完全一致
             if S_ISDIR(x.st_mode):
                 all_files[filename] = 'd'
-                all_files = ChainMap(all_files, self.__get_all_files_in_remote_dir(sftp, filename))
+                all_files = chainmap.ChainMap(all_files, self.__get_all_files_in_remote_dir(sftp, filename))
             else:
                 all_files[filename] = 'f'
         return all_files
@@ -87,7 +90,7 @@ class Server(object):
             # 如果是目录，则递归处理该目录
             if os.path.isdir(filename):
                 all_files[filename] = 'd'
-                all_files = ChainMap(all_files, self.__get_all_files_in_local_dir(filename))
+                all_files = chainmap.ChainMap(all_files, self.__get_all_files_in_local_dir(filename))
             else:
                 all_files[filename] = 'f'
         return all_files
@@ -137,5 +140,5 @@ class Server(object):
 if __name__ == '__main__':
     host = Server('10.67.27.139', 'root', 'root')
     # print(host.run_command('ls -l', '/root/test'))
-    host.sftp_put_dir(r'e:\tmp\Pictures\\', r'/tmp/')
+    host.sftp_put_dir(r'/home/xliu074/Pictures', r'/tmp/')
     # host.sftp_get_dir(r'/home/xliu074/Pictures', r'e:\tmp')
