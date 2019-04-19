@@ -17,8 +17,8 @@ if [ ! "$1" ];then
 	awk '{printf "%-10s  %s\n",$1,$2}' $CONFIG | sed 's/ansible_ssh_host=//' | sort
 	exit 1
 fi
-host=$1
-cmd=$2
+myhost=$1
+command=$2
 line=`awk -v myhost=$myhost '{if($1 == myhost) print $0}' $CONFIG`
 USER=`echo $line | egrep -o "ansible_ssh_user=\w+" | awk -F= '{print $2}'`
 SERVER=`echo $line | egrep -o "ansible_ssh_host=\w+\.\w+\.\w+\.\w+" | awk -F= '{print $2}'`
