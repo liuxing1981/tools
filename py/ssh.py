@@ -19,18 +19,6 @@ class Server(object):
         # 链接失败的重试次数
         self.try_times = 3
 
-    # 调用该方法连接远程主机
-    def connect(self):
-         pass
-
-    # 断开连接
-    def close(self):
-        pass
-
-    # 发送要执行的命令
-    def send(self, cmd):
-        pass
-
     # get单个文件
     def sftp_get_file(self, remotefile, localfile):
         t = paramiko.Transport(sock=(self.ip, self.port))
@@ -69,20 +57,24 @@ class Server(object):
         t.connect(username=self.username, password=self.password)
         sftp = paramiko.SFTPClient.from_transport(t)
         all_files = self.__get_all_files_in_remote_dir(sftp, remote_dir)
-        dirs = [ str(k) for k, v in all_files.items() if v == 'd']
-        files = [ k for k, v in all_files.items() if v == 'f']
-        remote_dir = remote_dir if remote_dir.endswith(os.sep) else remote_dir + os.sep
+        dirs = [k for k, v in all_files.items() if v == 'd']
+        files = [k for k, v in all_files.items() if v == 'f']
+        remote_dir = remote_dir if remote_dir.endswith('/') else remote_dir + '/'
+        current_dir = remote_dir.split('/')[-2]
         local_dir = local_dir if local_dir.endswith(os.sep) else local_dir + os.sep
         for dir in dirs:
-            dir = dir[len(remote_dir):]
-            dir = os.path.normcase(local_dir + dir)
+            dir = dir.replace(remote_dir, '')
+            dir = os.path.normpath(local_dir + current_dir + os.sep + dir)
             if not os.path.isdir(dir):
                 os.makedirs(dir)
+        count = 0
         for filename in files:
-            local_filename = filename[len(remote_dir):]
-            local_filename = os.path.normcase(local_dir + local_filename)
-            print('Download file %s to %s' %(filename,local_filename))
+            local_filename = filename.replace(remote_dir, '')
+            local_filename = os.path.normpath(local_dir + current_dir + os.sep + local_filename)
+            print('Download file %s to %s' %(filename, local_filename))
             sftp.get(filename, local_filename)
+            count += 1
+        print('Total: ' + str(count) + ' files')
     
     # ------获取本地指定目录及其子目录下的所有文件------
     def __get_all_files_in_local_dir(self, local_dir):
@@ -110,22 +102,25 @@ class Server(object):
 
         # 获取本地指定目录及其子目录下的所有文件
         all_files = self.__get_all_files_in_local_dir(local_dir)
-        dirs = [ str(k) for k, v in all_files.items() if v == 'd']
-        files = [ k for k, v in all_files.items() if v == 'f']
+        dirs = [k for k, v in all_files.items() if v == 'd']
+        files = [k for k, v in all_files.items() if v == 'f']
         remote_dir = remote_dir if remote_dir.endswith(os.sep) else remote_dir + '/'
         local_dir = local_dir if local_dir.endswith(os.sep) else local_dir + os.sep
+        current_dir = local_dir.split(os.sep)[-2]
         for dir in dirs:
-            dir = dir[len(local_dir):]
+            dir = dir.replace(local_dir, '')
             dir = dir.replace('\\', '/')
-            dir = remote_dir + dir
+            dir = remote_dir + current_dir + '/' + dir
             self.run_command('mkdir -p ' + dir)
+        count = 0
         for filename in files:
-            remote_filename = filename[len(local_dir):]
+            remote_filename = filename.replace(local_dir, '')
             remote_filename = remote_filename.replace('\\', '/')
-            remote_filename = remote_dir + remote_filename
-            print('Upload file from %s to %s' %(filename,remote_filename))
+            remote_filename = remote_dir + current_dir + '/' + remote_filename
+            print('Upload file from %s to %s' %(filename, remote_filename))
             sftp.put(filename, remote_filename)
-     
+            count += 1
+        print('Total: ' + str(count) + ' files')
 
     def run_command(self, command, chdir='/tmp'):
         ssh = paramiko.SSHClient()
@@ -140,12 +135,7 @@ class Server(object):
 
 
 if __name__ == '__main__':
-    host = Server('114.215.64.121', 'root', 'SvL9n9123!')
+    host = Server('10.67.27.139', 'root', 'root')
     # print(host.run_command('ls -l', '/root/test'))
-    # 将远端remote_path目录中的所有文件get到本地local_path目录
-    # host.sftp_get_dir(r'/root/test', r'e:\tmp')
-    # # 将本地local_path目录中的所有文件put到远端remote_path目录
-    # host.sftp_put_dir(remote_path, local_path)
-    host.sftp_get_dir(r'/tmp/Test', r'e:\tmp')
-    # # 将本地local_path目录中的所有文件put到远端remote_path目录
-    # host.sftp_put_dir(r'e:\tmp', '/tmp')
+    host.sftp_put_dir(r'e:\tmp\Pictures\\', r'/tmp/')
+    # host.sftp_get_dir(r'/home/xliu074/Pictures', r'e:\tmp')
