@@ -67,3 +67,37 @@ ls $1
 
 If the args is /tmp the command is ls /tmp. This is only used for test when press F5 to run.
 ```
+
+## py/ssh_py2.py and py/ssh_py3.py
+### Prerequire
+```bash
+# for python2
+pip2 install paramiko py2chainmap
+
+#  for python3
+pip3 install paramiko
+
+``` 
+### How to use
+#### Create a Server object
+```python
+host = Server('127.0.0.1', 'root', 'root')
+```
+#### Remote run some commands
+```python
+result, status = host.run_command('ls -l', '/root')
+```
+#### Use sftp to download and upload
+```python
+    host = Server('127.0.0.1', 'root', 'root')
+    # upload the local directory to remote
+    host.sftp_put_dir(r'/home/xliu074/Pictures', r'/tmp/')
+    # upload the local file to remote
+    host.sftp_put_file(r'/home/xliu074/Pictures/b', r'/tmp/Pictures/b')
+    
+    # download the remote directory to local
+    host.sftp_get_dir(r'/home/xliu074/Pictures', r'/tmp')
+    # download the remote file to local
+    host.sftp_get_file(r'/home/xliu074/Pictures/b', r'/tmp/b')
+
+```

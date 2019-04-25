@@ -1,7 +1,7 @@
+# -*- coding: utf-8 -*-
 import os
-from collections import ChainMap
+import py2chainmap
 from stat import S_ISDIR
-#from collections import ChainMap
 import paramiko
 
 
@@ -28,7 +28,7 @@ class Server(object):
         if localfile[-1] in ('/', r'\\'):
             localfile += os.path.basename(remotefile)
         sftp.get(remotefile, localfile)
-        print('download file from {} to {} success'.format(remotefile, localfile))
+        print('Download file from {} to {}'.format(remotefile, localfile))
         t.close()
 
     # put单个文件
@@ -39,7 +39,7 @@ class Server(object):
         if remotefile[-1] in ('/', r'\\'):
             remotefile += os.path.basename(localfile)
         sftp.put(localfile, remotefile)
-        print('upload file from {} to {} success'.format(localfile, remotefile))
+        print('Upload file from {} to {}'.format(localfile, remotefile))
         t.close()
 
     # ------获取远端linux主机上指定目录及其子目录下的所有文件------
@@ -54,7 +54,7 @@ class Server(object):
             # 如果是目录，则递归处理该目录，这里用到了stat库中的S_ISDIR方法，与linux中的宏的名字完全一致
             if S_ISDIR(x.st_mode):
                 all_files[filename] = 'd'
-                all_files = ChainMap(all_files, self.__get_all_files_in_remote_dir(sftp, filename))
+                all_files = py2chainmap.ChainMap(all_files, self.__get_all_files_in_remote_dir(sftp, filename))
             else:
                 all_files[filename] = 'f'
         return all_files
@@ -78,7 +78,7 @@ class Server(object):
         for filename in files:
             local_filename = filename.replace(remote_dir, '')
             local_filename = os.path.normpath(local_dir + current_dir + os.sep + local_filename)
-            print('Download file %s to %s' %(filename, local_filename))
+            print('Download file from %s to %s' %(filename, local_filename))
             sftp.get(filename, local_filename)
             count += 1
         print('Total: ' + str(count) + ' files')
@@ -94,7 +94,7 @@ class Server(object):
             # 如果是目录，则递归处理该目录
             if os.path.isdir(filename):
                 all_files[filename] = 'd'
-                all_files = ChainMap(all_files, self.__get_all_files_in_local_dir(filename))
+                all_files = py2chainmap.ChainMap(all_files, self.__get_all_files_in_local_dir(filename))
             else:
                 all_files[filename] = 'f'
         return all_files
@@ -128,27 +128,28 @@ class Server(object):
                 sftp.put(filename, remote_filename)
                 count += 1
             print('Total: ' + str(count) + ' files')
-        except NotADirectoryError as e:
-            print('ERROR:  {} is not a directory. This method only supports directory'.format(local_dir))
+        except Exception as e:
+            print(e)
+            print('ERROR:  Maybe {} is not a directory. This method only supports directory'.format(local_dir))
 
     def run_command(self, command, chdir='/tmp'):
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh.connect(hostname=self.ip,port=self.port,username=self.username,password=self.password)
         stdin, stdout, stderr = ssh.exec_command("cd %s && %s" %(chdir, command))
-        print(stderr.readlines())
-        if len(stderr.readlines()) != 0:
+        exit_code = stdout.channel.recv_exit_status()
+        err = stderr.read()
+        if exit_code != 0:
             ssh.close()
-            return stderr.splitlines(), -1
+            return err, exit_code
         else:
             ssh.close()
-            # return stdout.splitlines(),0
-            return ('\n').join([x.strip('\n') for x in stdout.readlines()]), 0
+            return ('\n').join([x.strip('\n') for x in stdout.readlines()]), exit_code
 
 
-if __name__ == '__main__':
-    host = Server('10.67.27.139', 'root', 'root')
-    # print(host.run_command('ls -l', '/rootaaa')[0])
-    host.sftp_put_file(r'E:\list.txt', r'/tmp/')
-    # host.sftp_get_file(r'/tmp/list.txt', r'e:/')
-    # host.sftp_get_dir(r'/home/xliu074/Pictures', r'e:\tmp')
+# if __name__ == '__main__':
+#     host = Server('10.67.27.139', 'root', 'root')
+#     # print(host.run_command('ls -l', '/root')[0])
+#     host.sftp_put_dir(r'/home/xliu074/Pictures', r'/tmp/')
+#     host.sftp_get_file(r'/home/xliu074/Pictures/b', r'/tmp/Pictures/b')
+#     host.sftp_get_dir(r'/home/xliu074/Pictures', r'/tmp')
