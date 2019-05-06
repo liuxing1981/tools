@@ -54,6 +54,7 @@ set autoread
 noremap <C-a> ggVG<CR>
 "delete space at end of line
 noremap <silent> <F1> i<CR><ESC>
+noremap <silent> <F2> ci"
 "clear hightlight search words
 noremap <silent> <F3> :let @/=""<CR>
 noremap <silent> <F4> :wqa<CR>
