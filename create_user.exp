@@ -1,0 +1,9 @@
+#!/usr/bin/expect
+set username [lindex $argv 0]
+exec useradd -m $username -s /bin/bash
+spawn passwd $username
+expect "*assword"
+send "$username\r"
+expect "*assword"
+send "$username\r"
+expect eof
