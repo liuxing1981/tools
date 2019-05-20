@@ -30,8 +30,8 @@ if [ -z "$PORT" ];then
 fi
 PUB_KEY=${PUB_KEY_HOME}/${SERVER}.pem
 login_remote(){
-	if [ -f "$SERVER.pem" ];then
-		cmd="ssh -p $PORT -o stricthostkeychecking=no -i $SERVER.pem $USER@$SERVER $command"
+	if [ -f "$PUB_KEY" ];then
+		cmd="ssh -p $PORT -o stricthostkeychecking=no -i $PUB_KEY $USER@$SERVER $command"
 	else
 		cmd="sshpass -p $PASSWORD ssh -p $PORT -o stricthostkeychecking=no -tt $USER@$SERVER $command"
 	fi
