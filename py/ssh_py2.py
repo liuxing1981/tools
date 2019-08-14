@@ -27,9 +27,27 @@ class Server(object):
         sftp = paramiko.SFTPClient.from_transport(t)
         if localfile[-1] in ('/', r'\\'):
             localfile += os.path.basename(remotefile)
+        if not os.path.exists(os.path.dirname(localfile)):
+            os.makedirs(os.path.dirname(localfile))
         sftp.get(remotefile, localfile)
         print('Download file from {} to {}'.format(remotefile, localfile))
         t.close()
+
+    # get单个文件
+    def sftp_get_file(self, remotefile, localfile):
+        t = paramiko.Transport(sock=(self.ip, self.port))
+        t.connect(username=self.username, password=self.password)
+        sftp = paramiko.SFTPClient.from_transport(t)
+        if localfile[-1] in ('/', r'\\'):
+            localfile += os.path.basename(remotefile)
+        if type(remotefile) ==  list:
+            for file in remotefile:
+                sftp.get(remotefile, localfile)
+                print('Download file from {} to {}'.format(remotefile, localfile))
+        else:
+            sftp.get(remotefile, localfile)
+        t.close()
+
 
     # put单个文件
     def sftp_put_file(self, localfile, remotefile):
@@ -147,9 +165,9 @@ class Server(object):
             return ('\n').join([x.strip('\n') for x in stdout.readlines()]), exit_code
 
 
-# if __name__ == '__main__':
-#     host = Server('10.67.27.139', 'root', 'root')
-#     # print(host.run_command('ls -l', '/root')[0])
-#     host.sftp_put_dir(r'/home/xliu074/Pictures', r'/tmp/')
-#     host.sftp_get_file(r'/home/xliu074/Pictures/b', r'/tmp/Pictures/b')
-#     host.sftp_get_dir(r'/home/xliu074/Pictures', r'/tmp')
+if __name__ == '__main__':
+    host = Server('10.67.27.139', 'root', 'root')
+    # print(host.run_command('ls -l', '/root')[0])
+    # host.sftp_put_dir(r'/home/xliu074/Pictures', r'/tmp/')
+    host.sftp_get_file(r'/home/xliu074/Pictures/b', r'/tmp/Pictures/')
+    # host.sftp_get_dir(r'/home/xliu074/Pictures', r'/tmp')
