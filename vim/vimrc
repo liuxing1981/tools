@@ -32,6 +32,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -63,6 +65,8 @@ endif
 let g:airline#extensions#tabline#enabled = 1
 " vim-airline setting end
 
+let g:gitgutter_terminal_reports_focus=0
+map <F9> :NERDTreeToggle<CR>
 
 let s:author=substitute(system("whoami"),'\%x00',"","g")
 let s:mail=substitute(system('str=$(cat ~/.gitconfig|grep "email =");str=${str##*=};echo $str'),'\%x00',"","g")
@@ -113,13 +117,15 @@ set showmode        " 命令行显示vim当前模式
 "--find setting--
 set incsearch        " 输入字符串就显示匹配点
 set hlsearch
+set cursorline
+set paste
 
 " defined by luis
 let mapleader=","
 set autoread
 noremap <C-a> ggVG<CR>
 "delete space at end of line
-noremap <silent> <F1> i<CR><ESC>
+" noremap <silent> <F1> i<CR><ESC>
 noremap <silent> <F2> ci"
 "clear hightlight search words
 noremap <silent> <F3> :let @/=""<CR>
