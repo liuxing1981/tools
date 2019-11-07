@@ -1,3 +1,69 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" vim-airline setting start
+" let g:airline_theme="luna" 
+let g:airline_powerline_fonts = 1   
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+nnoremap <C-N> :bn<CR>
+nnoremap <C-P> :bp<CR>
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#whitespace#symbol = '!'
+if has('win32')
+  set guifont=Hermit:h13
+  set guifontwide=Microsoft_YaHei_Mono:h12
+endif
+let g:airline#extensions#tabline#enabled = 1
+" vim-airline setting end
+
+
 let s:author=substitute(system("whoami"),'\%x00',"","g")
 let s:mail=substitute(system('str=$(cat ~/.gitconfig|grep "email =");str=${str##*=};echo $str'),'\%x00',"","g")
 if has("syntax")
@@ -104,10 +170,20 @@ func Up_text()
 	endif
 endfunc
 func Comment(line)
-	if matchstr(a:line,"^#") == "#"
-		:s/^#//
-	else
-		:s/^/#/
+	if &filetype == 'xml'
+		if stridx(a:line,"<!--") == 0
+			:s/^\<\!--//
+			:s/--\>$//
+		else
+			:s/^/<!--/
+			:s/$/-->/
+		endif
+    else	
+		if matchstr(a:line,"^#") == "#"
+			:s/^#//
+		else
+			:s/^/#/
+		endif
 	endif
 endfunc
 autocmd BufNewFile *.pl,*.py,*.sh,*.exp exec ":call SetTitle()" 
