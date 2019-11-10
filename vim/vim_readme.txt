@@ -18,3 +18,7 @@ ls $1
 
 If the args is /tmp the command is ls /tmp. This is only used for test when press F5 to run.
 
+Install vbunlde to manage vim plugin
+cp *.ttf /usr/share/fonts 在服务器端，如果有必要
+在客户端的terminal也要导入这个字体
+

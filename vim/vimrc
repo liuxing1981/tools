@@ -34,6 +34,10 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
+Plugin 'dense-analysis/ale'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -118,33 +122,37 @@ set showmode        " 命令行显示vim当前模式
 set incsearch        " 输入字符串就显示匹配点
 set hlsearch
 set cursorline
-set paste
+" set paste
+set autoread
 
 " defined by luis
 let mapleader=","
-set autoread
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+inoremap jk <esc>
+vnoremap jk <esc>
+noremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 noremap <C-a> ggVG<CR>
 "delete space at end of line
 " noremap <silent> <F1> i<CR><ESC>
-noremap <silent> <F2> ci"
 "clear hightlight search words
 noremap <silent> <F3> :let @/=""<CR>
 noremap <silent> <F4> :wqa<CR>
-noremap <silent> <leader>w :wqa<CR>
 inoremap <silent> <F4> <ESC>:wqa<CR>
+noremap <silent> <leader>s :wq<CR>
 noremap <silent> <F5> :call Run()<CR><CR>
 inoremap <silent> <F5> <ESC>:call Run()<CR><CR>
 nnoremap <silent> <F6> <C-w>w<CR>
-"auto indent
-nnoremap <silent> <F8> gg=G
 "delete empty lines
 noremap <silent> <F12> :call Drop_tail()<CR>
-noremap <silent> f gg=G
 noremap <silent> <leader>f gg=G
 noremap <silent> <C-d> :call Comment(getline('.'))<CR>
 "noremap <silent> <C-j> :call Down_text()<CR>
 "noremap <silent> <C-k> :call Up_text()<CR>
 inoremap <silent> <S-CR> <ESC>O
+noremap <silent> <a-up> ?{<cr>
+noremap <silent> <a-down> /}<cr>
+onoremap ip :<c-u>normal! f)vi(<cr>
 func Drop_tail()
 	" delete empty lines
 	exec 'g/^\s*$/d'
@@ -153,9 +161,6 @@ func Drop_tail()
 	exec '%s/\%x00/ /g'
 	" delete empty spaces of line
 	exec '%s/ *$//'
-endfunc
-
-func Hlsearch()
 endfunc
 
 func Down_text()
@@ -184,11 +189,17 @@ func Comment(line)
 			:s/^/<!--/
 			:s/$/-->/
 		endif
-    else	
+    elseif &filetype == 'sh' or &filetype == 'python'
 		if matchstr(a:line,"^#") == "#"
 			:s/^#//
 		else
 			:s/^/#/
+		endif
+	elseif &filetype == 'javascript'
+		if matchstr(a:line,"^//") == "//"
+			:s/^\/\///
+		else
+			:s/^/\/\//
 		endif
 	endif
 endfunc
