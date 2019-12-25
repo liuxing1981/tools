@@ -1,4 +1,5 @@
-F1  start a new line
+F1  tree for view
+F3  clear search result
 F4  close all files = wqa
 F5  run the script
 F6  change to another window
@@ -6,7 +7,13 @@ F12 remove empty line and spaces at the end of line
 
 ctrl+a select all
 ctrl+d comment line
-f format code
+ctrl+n next file
+ctrl+p previous file
+,f validate and format json
+,r run current line with bash shell
+," add " surround a word
+,ev open .vimrc file
+,sv reload .vimrc file
 
 
 note: 
