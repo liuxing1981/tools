@@ -15,6 +15,7 @@ with open(file) as f:
         data = json.load(f,object_pairs_hook=OrderedDict)
     except Exception as e:
         print(e)
+        sys.exit(1)
 
 if data is not None:
     with open(file,"w") as f:
