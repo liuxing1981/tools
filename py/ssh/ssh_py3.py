@@ -8,10 +8,15 @@ import paramiko
 # 定义一个类，表示一台远端linux主机
 class Server(object):
     # 通过IP, 用户名，密码，超时时间初始化一个远程Linux主机
-    def __init__(self, ip, username, password, port=22, timeout=30):
+    def __init__(self, ip, username, credentials, port=22, timeout=30):
         self.ip = ip
         self.username = username
-        self.password = password
+        if os.path.exists(credentials):
+            self.pkey = paramiko.RSAKey.from_private_key_file(credentials)
+            print('private key credentials')
+        else:
+            self.password = credentials
+            print('password credentials')
         self.port = port
         self.timeout = timeout
         # transport和chanel
@@ -20,27 +25,42 @@ class Server(object):
         # 链接失败的重试次数
         self.try_times = 3
 
+    def get_sftp_instance(self):
+        t = paramiko.Transport(sock=(self.ip, self.port))
+        if hasattr(self, "password"):
+            t.connect(username=self.username, password=self.password)
+        elif hasattr(self, "pkey"):
+
+            t.connect(username=self.username, pkey=self.pkey)
+        sftp = paramiko.SFTPClient.from_transport(t)
+        return sftp
+
+    def get_ssh_instance(self):
+        ssh = paramiko.SSHClient()
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        if hasattr(self, "password"):
+            ssh.connect(hostname=self.ip, port=self.port, username=self.username, password=self.password)
+        elif hasattr(self, "pkey"):
+            ssh.connect(hostname=self.ip, port=self.port, username=self.username, pkey=self.pkey)
+        return ssh
+
     # get单个文件
     def sftp_get_file(self, remotefile, localfile):
-        t = paramiko.Transport(sock=(self.ip, self.port))
-        t.connect(username=self.username, password=self.password)
-        sftp = paramiko.SFTPClient.from_transport(t)
+        sftp = self.get_sftp_instance()
         if localfile[-1] in ('/', r'\\'):
             localfile += os.path.basename(remotefile)
         sftp.get(remotefile, localfile)
         print('Download file from {} to {}'.format(remotefile, localfile))
-        t.close()
+        sftp.close()
 
     # put单个文件
     def sftp_put_file(self, localfile, remotefile):
-        t = paramiko.Transport(sock=(self.ip, self.port))
-        t.connect(username=self.username, password=self.password)
-        sftp = paramiko.SFTPClient.from_transport(t)
+        sftp = self.get_sftp_instance()
         if remotefile[-1] in ('/', r'\\'):
             remotefile += os.path.basename(localfile)
         sftp.put(localfile, remotefile)
         print('Upload file from {} to {}'.format(localfile, remotefile))
-        t.close()
+        sftp.close()
 
     # ------获取远端linux主机上指定目录及其子目录下的所有文件------
     def __get_all_files_in_remote_dir(self, sftp, remote_dir):
@@ -60,9 +80,7 @@ class Server(object):
         return all_files
 
     def sftp_get_dir(self, remote_dir, local_dir):
-        t = paramiko.Transport(sock=(self.ip, self.port))
-        t.connect(username=self.username, password=self.password)
-        sftp = paramiko.SFTPClient.from_transport(t)
+        sftp = self.get_sftp_instance()
         all_files = self.__get_all_files_in_remote_dir(sftp, remote_dir)
         dirs = [k for k, v in all_files.items() if v == 'd']
         files = [k for k, v in all_files.items() if v == 'f']
@@ -82,6 +100,7 @@ class Server(object):
             sftp.get(filename, local_filename)
             count += 1
         print('Total: ' + str(count) + ' files')
+        sftp.close()
     
     # ------获取本地指定目录及其子目录下的所有文件------
     def __get_all_files_in_local_dir(self, local_dir):
@@ -101,9 +120,7 @@ class Server(object):
 
     def sftp_put_dir(self, local_dir, remote_dir):
         try:
-            t = paramiko.Transport(sock=(self.ip, self.port))
-            t.connect(username=self.username, password=self.password)
-            sftp = paramiko.SFTPClient.from_transport(t)
+            sftp = self.get_sftp_instance()
             # 去掉路径字符最后的字符'/'，如果有的话
             if remote_dir[-1] == '/':
                 remote_dir = remote_dir[0:-1]
@@ -131,11 +148,11 @@ class Server(object):
         except Exception as e:
             print(e)
             print('ERROR:  Maybe {} is not a directory. This method only supports directory'.format(local_dir))
+        finally:
+            sftp.close()
 
     def run_command(self, command, chdir='/tmp'):
-        ssh = paramiko.SSHClient()
-        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        ssh.connect(hostname=self.ip, port=self.port, username=self.username, password=self.password)
+        ssh = self.get_ssh_instance()
         stdin, stdout, stderr = ssh.exec_command("cd %s && %s" % (chdir, command))
         exit_code = stdout.channel.recv_exit_status()
         err = stderr.read()
@@ -149,8 +166,11 @@ class Server(object):
 
 if __name__ == '__main__':
     host = Server('10.67.27.139', 'xliu074', 'xliu074')
-    # print(host.run_command('ls -l', '/root')[0])
+    host2 = Server('10.96.181.69', 'cbam', r'e:\\dist\\cbam.pem')
+    print(host.run_command('ls -l', '/home/xliu074')[0])
+    print('==============================================')
+    print(host2.run_command('ls -l', '/home/cbam')[0])
     # host.sftp_put_dir(r'/home/xliu074/Pictures', r'/tmp/')
     # host.sftp_put_file(r'/home/xliu074/Pictures/b', r'/tmp/')
     # host.sftp_get_file(r'/home/xliu074/Pictures/b', r'e:/')
-    host.sftp_get_dir(r'/home/xliu074/Pictures', r'/tmp')
+    # host.sftp_get_dir(r'/home/xliu074/Pictures', r'/tmp')
