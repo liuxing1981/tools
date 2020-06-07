@@ -66,13 +66,17 @@ def group_result():
                         new_result[key].append((take_time, file))
     for key, value in new_result.items():
         value = sorted(value, key=lambda x:x[0])
+        _, old_file_name = value[0]
+        path = os.path.dirname(old_file_name)
+        day = key[:4] + '-' + key[4:6] + '-' + key[6:8]
+        dest_folder = os.path.join(path, day)
+        os.makedirs(dest_folder, exist_ok=True)
         num = len(str(len(value)))
         for index, (take_time, old_file_name) in enumerate(value):
-            path = os.path.dirname(old_file_name)
             ext = '.' + old_file_name.split('.')[-1]
             take_time = take_time[:8]
             take_time = take_time[:4] + '-' + take_time[4:6] + '-' + take_time[6:8]
-            new_file_name = os.path.join(path, take_time + '-' + format(index+1, num) + ext)
+            new_file_name = os.path.join(dest_folder, take_time + '-' + format(index+1, num) + ext)
             shutil.move(old_file_name, new_file_name)
 
 

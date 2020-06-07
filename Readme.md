@@ -101,3 +101,10 @@ result, status = host.run_command('ls -l', '/root')
     host.sftp_get_file(r'/home/xliu074/Pictures/b', r'/tmp/b')
 
 ```
+
+## sort_photo.py
+> sort photo by take time or create time
+> create new folder by day, and move all photos which were token by that day to the folder.
+```buildoutcfg
+python3 sort_photo.py photo_path
+```
