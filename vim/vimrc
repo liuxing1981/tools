@@ -198,11 +198,17 @@ func Comment(line)
 			:s/^/<!--/
 			:s/$/-->/
 		endif
-    else	
+    elseif &filetype == 'sh' or &filetype == 'python'
 		if matchstr(a:line,"^#") == "#"
 			:s/^#//
 		else
 			:s/^/#/
+		endif
+	elseif &filetype == 'javascript'
+		if matchstr(a:line,"^//") == "//"
+			:s/^\/\///
+		else
+			:s/^/\/\//
 		endif
 	endif
 endfunc
@@ -231,7 +237,7 @@ endfunc
 
 let s:open_flag=0
 func Run()
-	if &filetype == 'sh' || &filetype == 'python'|| &filetype == 'perl'|| &filetype == 'expect'
+	if &filetype == 'c' ||  &filetype == 'sh' || &filetype == 'python'|| &filetype == 'perl'|| &filetype == 'expect'
 		exe "normal! mq"
 		if s:open_flag == 0
 			let s:open_flag=1
@@ -257,6 +263,9 @@ endfunc
 func Run_script()
 	call GetArgs()
 	:w!
+	if &filetype == 'c'
+		execute ':!clear && gcc % -o %:r && ./%:r' . s:args . ' 2>&1 | tee %:r.out'
+	elseif &filetype == 'python'
 	if &filetype == 'sh'
 		execute ':!clear && sh % ' . s:args . ' 2>&1 | tee %.out'
 	elseif &filetype == 'python'
