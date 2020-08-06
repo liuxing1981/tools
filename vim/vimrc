@@ -160,7 +160,7 @@ nnoremap <leader>s :wq<cr>
 nnoremap / /\v
 nnoremap <leader>r :.w !bash<cr>
 vnoremap <leader>r :w !bash<cr>
-noremap <leader>f :!python3 validate_json.py %<cr>
+noremap <leader>f :call Format()<CR>
 
 func Drop_tail()
 	" delete empty lines
@@ -198,7 +198,7 @@ func Comment(line)
 			:s/^/<!--/
 			:s/$/-->/
 		endif
-    elseif &filetype == 'sh' or &filetype == 'python'
+    elseif &filetype == 'sh' || &filetype == 'python'
 		if matchstr(a:line,"^#") == "#"
 			:s/^#//
 		else
@@ -260,13 +260,25 @@ func GetArgs()
 	endfor
 endfunc
 
+func Format()
+	if &filetype == 'xml' || &filetype == 'spml'
+		execute ':!clear && xmllint --format % -o %'
+	elseif &filetype == 'ldif'
+		execute ':!clear && sh ~/bin/format_ldif.sh %'
+	elseif &filetype == 'json'
+		execute ':!clear && python3 ~/bin/validate_json.py %'
+	else
+		execute 'normal! gg=G'
+    endif
+endfunc
+
 func Run_script()
 	call GetArgs()
 	:w!
 	if &filetype == 'c'
 		execute ':!clear && gcc % -o %:r && ./%:r' . s:args . ' 2>&1 | tee %:r.out'
-	elseif &filetype == 'python'
-	if &filetype == 'sh'
+	elseif &filetype == 'sh'
+		echom s:args
 		execute ':!clear && sh % ' . s:args . ' 2>&1 | tee %.out'
 	elseif &filetype == 'python'
 		execute ':!clear && python % ' . s:args . ' 2>&1 | tee %.out'

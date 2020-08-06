@@ -6,6 +6,8 @@
 #########################################################################
 #!/bin/bash
 cp vimrc ~/.vimrc
+mkdir -p ~/bin
 cp validate_json.py ~/bin/
+cp format_ldif.sh ~/bin/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
