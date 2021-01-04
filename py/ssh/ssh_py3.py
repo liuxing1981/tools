@@ -169,7 +169,7 @@ if __name__ == '__main__':
     host2 = Server('10.96.181.69', 'cbam', r'e:\\dist\\cbam.pem')
     print(host.run_command('ls -l', '/home/xliu074')[0])
     print('==============================================')
-    print(host2.run_command('ls -l', '/home/cbam')[0])
+    print(host2.run_command('ls -l', '/home/cbam'))
     # host.sftp_put_dir(r'/home/xliu074/Pictures', r'/tmp/')
     # host.sftp_put_file(r'/home/xliu074/Pictures/b', r'/tmp/')
     # host.sftp_get_file(r'/home/xliu074/Pictures/b', r'e:/')
