@@ -20,12 +20,24 @@ def cal(limit=20, count=100):
         if i ==j:
             continue
         if add.get() == 1 and i + j <= limit:
-            result.add('%s + %s = ' % (i, j))
-        if sub.get() == 1 and i -j <=limit:
-            if i >= j:
-                result.add('%s - %s = '%(i,j))
+            # 无进位
+            if add_1.get() == 1:
+                if i%10 + j%10 < 10:
+                    result.add('%s + %s = ' % (i, j))
             else:
-                result.add('%s - %s = ' % (j, i))
+                result.add('%s + %s = ' % (i, j))
+        if sub.get() == 1 and i -j <=limit:
+            # 无退位
+            if sub_1.get() == 1 and abs(i%10 - j%10) < 10:
+                if i >= j:
+                    result.add('%s - %s = '%(i,j))
+                else:
+                    result.add('%s - %s = ' % (j, i))
+            else:
+                if i >= j:
+                    result.add('%s - %s = ' % (i, j))
+                else:
+                    result.add('%s - %s = ' % (j, i))
         if mul.get == 1 and i * j <=limit:
             result.add('%s × %s = ' % (i, j))
         if div.get() == 1 and i % j == 0 and i / j <= limit:
@@ -84,7 +96,7 @@ window.title('小学数学运算题目生成器')
 window.resizable(0, 0)
 screenWidth = window.winfo_screenwidth()  # 获取显示区域的宽度
 screenHeight = window.winfo_screenheight()  # 获取显示区域的高度
-width = 400  # 设定窗口宽度
+width = 450  # 设定窗口宽度
 height = 200  # 设定窗口高度
 left = (screenWidth - width) / 2
 top = (screenHeight - height) / 2
@@ -106,14 +118,18 @@ page = tk.Entry(window, show=None, font=('Arial', 12),width=3, textvariable=page
 # check box
 add = tk.IntVar()
 sub = tk.IntVar()
+add_1 = tk.IntVar()
+sub_1 = tk.IntVar()
 mul = tk.IntVar()
 div = tk.IntVar()
 add.set(1)
 sub.set(1)
 c1 = tk.Checkbutton(window, text='加法', variable=add, onvalue=1, offvalue=0)
 c2 = tk.Checkbutton(window, text='减法', variable=sub, onvalue=1, offvalue=0)
-c3 = tk.Checkbutton(window, text='乘法', variable=mul, onvalue=1, offvalue=0)
-c4 = tk.Checkbutton(window, text='除法', variable=div, onvalue=1, offvalue=0)
+c3 = tk.Checkbutton(window, text='无进位', variable=add_1, onvalue=1, offvalue=0)
+c4 = tk.Checkbutton(window, text='无退位', variable=sub_1, onvalue=1, offvalue=0)
+c5 = tk.Checkbutton(window, text='乘法', variable=mul, onvalue=1, offvalue=0)
+c6 = tk.Checkbutton(window, text='除法', variable=div, onvalue=1, offvalue=0)
 gen_button = tk.Button(window, text="生成题目", command=create)
 limit_text.place(x=30, y=25)
 limit.place(x=100, y=25)
@@ -123,7 +139,9 @@ opt_text.place(x=30, y=95)
 c1.place(x=100, y=95)
 c2.place(x=150, y=95)
 c3.place(x=200, y=95)
-c4.place(x=250, y=95)
+c4.place(x=270, y=95)
+c5.place(x=330, y=95)
+c6.place(x=380, y=95)
 page_text.place(x=30, y=130)
 page.place(x=100, y=130)
 gen_button.place(x=30, y=165)
